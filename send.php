@@ -10,7 +10,6 @@ if (isset($_POST['send'])) {
     $Username = $_POST['Username'];
     $email = $_POST['email'];
     $number = $_POST['number'];
-    $send = $_POST['send'];
 
     require 'phpmailer/Exception.php';
     require 'phpmailer/PHPMailer.php';
@@ -40,8 +39,7 @@ if (isset($_POST['send'])) {
         // Send the email
         $mail->send();
 
-         
-        header("Location: ".$_SERVER['index.php']);  
+        header("Location:index.php");  
         exit();   
     } catch (Exception $e) {
         // Error handling
