@@ -38,12 +38,14 @@ if (isset($_POST['send'])) {
 
         // Send the email
         $mail->send();
-
-        header("Location:index.php");  
+        echo "<script>alert('Form has been submitted successfully!');</script>";
+        echo "<script>window.location.href = 'index.php';</script>"; 
+        // header("Location:index.php");  
         exit();   
     } catch (Exception $e) {
         // Error handling
-        echo "Message could not be sent.Mailer Error: {$mail->ErrorInfo}";
+        // echo "Message could not be sent.Mailer Error: {$mail->ErrorInfo}";
+        echo "<script>alert('Message could not be sent. Mailer Error: {$mail->ErrorInfo}');</script>";
     }
 }
 ?>
